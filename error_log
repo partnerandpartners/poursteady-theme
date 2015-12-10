@@ -1,0 +1,5 @@
+[10-Nov-2014 06:21:20 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/ps2admin/public_html/wp-content/themes/poursteady/index.php on line 16
+[27-Jan-2015 21:28:25 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/ps2admin/public_html/wp-content/themes/poursteady/index.php on line 16
+[20-Sep-2015 21:37:08 UTC] PHP Fatal error:  Call to undefined function post_password_required() in /home/ps2admin/public_html/wp-content/themes/poursteady/comments.php on line 16
+[24-Nov-2015 09:17:11 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/ps2admin/public_html/wp-content/themes/poursteady/index.php on line 16
+[24-Nov-2015 09:17:13 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/ps2admin/public_html/wp-content/themes/poursteady/index.php on line 16
