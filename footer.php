@@ -27,13 +27,12 @@
 			<div class="col-sm-12"><a class="social-link" href="poursteady.com/events">At Your Event</a>
 			</div>-->
 			
-			</br></br>
-			
-
+            <div class="row">
 			<div class="col-sm-12">Contact Us: <a class="social-link" href="mailto:info@poursteady.com">info@poursteady.com</a>
 			</div></br></br>
 			
 			<div class="col-sm-12">Follow Us: <a class="social-link" href="http://facebook.com/poursteady" target="_blank">Facebook</a>  | <a class="social-link" href="http://twitter.com/poursteadynyc" target="_blank">Twitter</a>
+			</div>
 			</div>
 		  </div>
 		  
@@ -42,10 +41,10 @@
 		   <div id="mc_embed_signup">
 			<form action="http://poursteady.us8.list-manage.com/subscribe/post?u=4f8f14bd9d1ea1237182e9269&amp;id=cac7516d97" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 				<!-- <label for="mce-EMAIL">For Updates:</label> -->
-				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Add your e-mail address to stay updated with our progress" required>
+				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter e-mail address" required>
 			    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 			    <div style="position: absolute; left: -5000px;"><input type="text" name="b_4f8f14bd9d1ea1237182e9269_cac7516d97" value=""></div>
-				<div class="clear"><input type="submit" value="Join Our Mailing List" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+				<div class="clear"><input type="submit" value="Join Mailing List" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 			</form>
 			</div>
 			<!--End mc_embed_signup-->
@@ -169,8 +168,8 @@
 	 <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/dev/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
    	
 	

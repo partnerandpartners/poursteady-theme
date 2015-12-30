@@ -32,7 +32,7 @@ $gray-light:                #818a91;
 $gray-lighter:              #eceeef;
 $gray-lightest:             #f7f7f9;
 
-$brand-primary:             #0275d8;
+$brand-primary:             #18E09A;
 $brand-success:             #5cb85c;
 $brand-info:                #5bc0de;
 $brand-warning:             #f0ad4e;
@@ -95,7 +95,7 @@ $body-color: $gray-dark;
 
 $link-color:                 $brand-primary;
 $link-decoration:            none;
-$link-hover-color:           darken($link-color, 15%);
+$link-hover-color:           #18E09A;
 $link-hover-decoration:      underline;
 
 
@@ -143,9 +143,9 @@ $grid-gutter-width:          1.875rem; // 30px
 // Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-serif:          Georgia, "Times New Roman", Times, serif;
+$font-family-serif:          "Publico Text Mono Web Roman", Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family-base: $font-family-sans-serif;
+$font-family-base: $font-family-serif;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root:             16px;
