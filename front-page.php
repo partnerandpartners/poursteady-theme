@@ -69,7 +69,7 @@
 
 		<?php
 			//special settings to speed up the querying of a single post
-			$introQuery = new WP_Query(array(
+			$appQuery = new WP_Query(array(
 			    'name' => 'the-app',
 			    'posts_per_page' => 1,
 			    'no_found_rows' => true, 
@@ -77,7 +77,7 @@
 			    'update_post_meta_cache' => false,
 			));
 		?>		   
-		<?php while($introQuery->have_posts()): $introQuery->the_post();?>
+		<?php while($appQuery->have_posts()): $appQuery->the_post();?>
 		<?php
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original' );
 		$url = $thumb['0'];

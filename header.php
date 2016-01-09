@@ -17,6 +17,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<!--
 <link rel="stylesheet" href="royalslider/royalslider.css">
@@ -64,7 +65,7 @@
 <body <?php body_class(); ?>>
 
 <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-  <a class="navbar-brand" href="#">Poursteady</a>
+  <a class="navbar-brand" href="/poursteady">Poursteady</a>
   <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     &#9776;
   </button>
@@ -83,8 +84,9 @@
 	      <a class="nav-link" href="news">News</a>
 	    </li>
 	  </ul>
+  </div>
 </nav>
-
+    
 <!--
 <div id="mobile-header">
 	

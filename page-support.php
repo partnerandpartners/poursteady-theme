@@ -42,33 +42,4 @@
 		
 		<?php endwhile; ?>
 
-		<div class="row"  id="press" style="background: #fff; padding: 6% 0 12% 0;">
-			<div class="container">
-			<div class="section-separator"><h4 class="section-header text-uppercase">As featured on</h4></div>
-				<div class="col-sm-12 center">
-			
-					<?php
-								//special settings to speed up the querying of a single post
-								$logoQuery = new WP_Query(array(
-								    'name' => 'logos',
-								    'posts_per_page' => 1,
-								    'no_found_rows' => true, 
-								    'update_post_term_cache' => false,
-								    'update_post_meta_cache' => false,
-								));
-								
-								?>		   
-							 <?php while($logoQuery->have_posts()): $logoQuery->the_post();?>
-							 
-								 <div class="col-sm-10 col-sm-offset-1" style="text-align:center;">
-								 	 <?php the_content() ?>
-								 </div>
-					             
-									<?php wp_reset_postdata(); ?>
-								<?php endwhile;?>
-			
-				</div> <!-- col-sm-12 -->
-			</div> <!-- container -->
-		</div><!-- row -->
-
 <?php get_footer(); ?>

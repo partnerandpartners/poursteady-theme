@@ -4,99 +4,335 @@
 
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		
-		<div class="row">
-			<div class="container" style="background: #fff; /*background: rgb(250,250,210);*/ padding: 8% 0 5% 0;">
-				<div class="col-sm-8">
-				<?php poursteady_print_banner_images( get_the_ID() ); ?>
-				</div>
-				<div class="col-sm-4">
-					<h2><?php the_title(); ?></h2>
-					<h5><?php the_field('subtitle'); ?></h5>
-					    <?php the_content(); ?>
-					<h5>Price</h5>
-					<h2><?php the_field('price'); ?></h2>
-					    <?php the_field('include'); ?>
-					<a href="<?php the_field('buy_link'); ?>" id="play" target="_blank"><button type="button" class="btn btn-primary btn-lg">Buy Now</button></a>
+		<div class="row grey-row" style="margin-top:54px;">
+			<div class="container-fluid">
+				<div class="col-lg-4 col-sm-offset-4">
+					<div class="buy-section">
+						<h2><?php the_title(); ?></h2>
+						<h4 class="subtitle"><?php the_field('subtitle'); ?></h4>
+						    <?php the_content(); ?>
+						<!-- <h1 class="price"><?php the_field('price'); ?></h1> -->
+						    <?php the_field('include'); ?><br><br>
+						<a href="<?php the_field('buy_link'); ?>" id="play" target="_blank"><button type="button" class="btn btn-primary btn-lg">Order Now</button></a>
+					</div>
 				</div>
 			</div>
 		</div>
 		
+		<div class="row no-padding-row margin-top">
+			<div class="container-fluid">
+					<div id='carousel-custom' class='carousel slide carousel-fade col-sm-6 col-sm-offset-3' data-ride='carousel' data-interval='false'>
+					    <div class='carousel-outer'>
+					        <!-- Wrapper for slides -->
+					        <div class='carousel-inner'>
+					            <div class='carousel-item active'>
+					                <img src='http://localhost/poursteady/wp-content/uploads/machine_home.jpg' class="img-fluid" alt='' />
+					            </div>
+					            <div class='carousel-item'>
+					                <img src='http://placehold.it/400x200&text=slide2' class="img-fluid" alt='' />
+					            </div>
+					            <div class='carousel-item'>
+					                <img src='http://placehold.it/400x200&text=slide3' class="img-fluid" alt='' />
+					            </div>
+					            <div class='carousel-item'>
+					                <img src='http://placehold.it/400x200&text=slide3' class="img-fluid" alt='' />
+					            </div>
+					            <div class='carousel-item'>
+					                <img src='http://placehold.it/400x200&text=slide3' class="img-fluid" alt='' />
+					            </div>
+					          
+					         
+					           
+					        </div>
+					    </div>
+					    
+					    <!-- Indicators -->
+					    <div class="carousel-thumbs">
+							<ol class='carousel-indicators'>
+								        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://placehold.it/100x50&text=slide1' alt='' /></li>
+								        <li data-target='#carousel-custom' data-slide-to='1'><img src='http://placehold.it/100x50&text=slide2' alt='' /></li>
+								        <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
+								        <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
+								        <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
+								       
+							</ol>
+						</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+		<div class="container-fluid full-width-container">
+				<?php 
+					$image = get_field('coffee_shop_image');
+		
+					if( !empty($image) ): 
+		
+					// vars
+					$url = $image['url'];
+					$title = $image['title'];
+					$alt = $image['alt'];
+					$caption = $image['caption'];
+				
+					// print image
+					$size = 'medium_large';
+					$thumb = $image['sizes'][ $size ];
+					$width = $image['sizes'][ $size . '-width' ];
+					$height = $image['sizes'][ $size . '-height' ];
+				
+					if( $caption ): ?>
+				
+						<div>
+				
+					    <?php endif; ?>
+				
+						<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="100%" height="" />
+				
+				
+					    <?php if( $caption ): ?>
+				
+					       <p class="full-width-image-caption"><em><?php echo $caption; ?></em></p>
+				
+					    </div>
+					    <?php endif; ?>
+				<?php endif; ?>
+			</div> <!-- container -->
+		</div> <!-- row -->
+		
+		<div class="row">
+			<div class="container-fluid">
+				<div class="col-sm-6 col-sm-offset-3">
+			    	<h1 class="text-center"><?php the_field('large_statement'); ?></h1>
+			    	<p class="text-center"><?php the_field('lead_in_paragraph'); ?></p>
+				</div>
+			</div> <!-- container -->
+		</div> <!-- row -->
+		
 		<div class="container">
-			<div class="row"  id="press" style="background: white; padding: 6% 0 12% 0;">
+		    <div class="row">
+		    <?php
+				$rowCounter = 0; //We need a new row every 4 posts.
+				if( get_field('list_of_features') ): ?>
+			<?php while( has_sub_field('list_of_features') ): ?>
+				<div class="col-sm-4">
+					<?php
+						
+							echo wp_get_attachment_image( get_sub_field( 'image' ), 'full', false, array( 'class' => 'attachment-full img-fluid' ) );
+						
+						?>
+				<h5 class="text-center text-uppercase"><?php the_sub_field('title'); ?></h5></br>
+				<p class="text-center"><?php the_sub_field('description'); ?></p>
+				</div>
+					<?php 
+						$rowCounter++;
+						if($rowCounter==3){
+							echo('</div>');//new row at 3rd post.
+							$rowCounter = 0;
+						}
+					?>
+					<?php endwhile; ?>
+					</div> <!-- row -->
+				<?php endif; ?>
+		</div> <!-- container -->
+		
+		<div class="row">
+		<div class="container-fluid full-width-container">
+				<div class="col-sm-6 col-sm-offset-3 large-margin-bottom">
+			    <h2 class="text-center"><?php the_field('design_lead_in'); ?></h2>
+				</div>
+				<div class="col-sm-6">
+				<?php
+						
+							echo wp_get_attachment_image( get_field( 'top_design_image' ), 'full', false, array( 'class' => 'attachment-full img-fluid' ) );
+						
+				?>
+				</div> <!-- col-sm-6 -->
+				<div class="col-sm-6">
+				<h4><?php the_field('top_design_title'); ?></h4>
+				<div><?php the_field('top_design_description'); ?></div>
+				</div> <!-- col-sm-6 -->
+				
+				</div> <!-- container -->
+		</div> <!-- row -->
+		
+		<div class="row">
+			<div class="container-fluid full-width-container">
+				
+				<div class="col-sm-6">
+				<h4><?php the_field('middle_design_title'); ?></h4>
+				<div><?php the_field('middle_design_description'); ?></div>
+				</div> <!-- col-sm-6 -->
+				<div class="col-sm-6">
+				<?php
+						
+							echo wp_get_attachment_image( get_field( 'middle_design_image' ), 'full', false, array( 'class' => 'attachment-full img-fluid' ) );
+						
+				?>
+				</div> <!-- col-sm-6 -->
+				
+			</div> <!-- container -->
+		</div> <!-- row -->
+		
+		<div class="row">
+			<div class="container-fluid full-width-container">
+				
+				<div class="col-sm-6">
+				<?php
+						
+							echo wp_get_attachment_image( get_field( 'bottom_design_image' ), 'full', false, array( 'class' => 'attachment-full img-fluid' ) );
+						
+				?>
+				</div> <!-- col-sm-6 -->
+				<div class="col-sm-6">
+				<h4><?php the_field('bottom_design_title'); ?></h4>
+				<div><?php the_field('bottom_design_description'); ?></div>
+				</div> <!-- col-sm-6 -->
+				
+			</div> <!-- container -->
+		</div> <!-- row -->
+  		
+  		<div class="container full-width-container">
+			<div class="row">
+				<div class="col-sm-4">
+				<hr>
+				</div> <!-- col-sm-3 -->
+				<div class="col-sm-4 text-center">
+				<button type="button" class="btn btn-lg"><a href="">See The Specifications</a></button>
+				</div> <!-- col-sm-3 -->
+				<div class="col-sm-4">
+				<hr>
+				</div> <!-- col-sm-3 -->
+			</div> <!-- row -->
+		</div> <!-- container -->
+		
+		<div class="row no-padding-row">
+		<div class="container-fluid full-width-container">
+				<?php 
+					$image = get_field('knolling_image');
+		
+					if( !empty($image) ): 
+		
+					// vars
+					$url = $image['url'];
+					$title = $image['title'];
+					$alt = $image['alt'];
+					$caption = $image['caption'];
+				
+					// print image
+					$size = 'medium_large';
+					$thumb = $image['sizes'][ $size ];
+					$width = $image['sizes'][ $size . '-width' ];
+					$height = $image['sizes'][ $size . '-height' ];
+				
+					if( $caption ): ?>
+				
+						<div>
+				
+					    <?php endif; ?>
+				
+						<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="100%" height="" />
+				
+				
+					    <?php if( $caption ): ?>
+				
+					       <p class="full-width-image-caption"><em><?php echo $caption; ?></em></p>
+				
+					    </div>
+					    <?php endif; ?>
+				<?php endif; ?>
+			</div> <!-- container -->
+		</div> <!-- row -->
+		
+		<div class="row grey-row">
+			<div class="container">
+		    <?php
+				$rowCounter = 0; //We need a new row every 4 posts.
+				if( get_field('list_of_key_components') ): ?>
+			<?php while( has_sub_field('list_of_key_components') ): ?>
+				<div class="col-sm-3">
+				<div class="circle"><?php the_sub_field('number'); ?></div><h5 class=""><?php the_sub_field('title'); ?></h5></br>
+				<p class=""><?php the_sub_field('description'); ?></p>
+				</div>
+					<?php 
+						$rowCounter++;
+						if($rowCounter==4){
+							echo('</div><div class="row">');//new row at 3rd post.
+							$rowCounter = 0;
+						}
+					?>
+					<?php endwhile; ?>
+				<?php endif; ?>
+			</div> <!-- row -->
+		</div> <!-- container -->
+		
+		<div class="row"  id="testing" style="background: #18E09A;">
+			<div class="container">
+					<div class="col-sm-12"><h2 class="text-center text-white">See Poursteady in a Coffee Shop</h2></div>
+					<div class="col-sm-12 text-center margin-top"><button type="button" class="btn btn-lg"><a href="">Poursteady Locations</a></button></div>
+			</div> <!-- container -->
+		</div><!-- row -->
+		
+		<div class="row no-padding-row">
+			<div class="container-fluid full-width-container">
+				<?php 
+					$image = get_field('machine_shop_image');
+		
+					if( !empty($image) ): 
+		
+					// vars
+					$url = $image['url'];
+					$title = $image['title'];
+					$alt = $image['alt'];
+					$caption = $image['caption'];
+				
+					// print image
+					$size = 'medium_large';
+					$thumb = $image['sizes'][ $size ];
+					$width = $image['sizes'][ $size . '-width' ];
+					$height = $image['sizes'][ $size . '-height' ];
+				
+					if( $caption ): ?>
+				
+						<div>
+				
+					    <?php endif; ?>
+				
+						<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="100%" height="" />
+				
+				
+					    <?php if( $caption ): ?>
+				
+					       <p class="full-width-image-caption"><em><?php echo $caption; ?></em></p>
+				
+					    </div>
+					    <?php endif; ?>
+				<?php endif; ?>
+			</div> <!-- container -->
+		</div> <!-- row -->
+		
+		<div class="row">
+			<div class="container">
+				<h2 class="text-center"><?php the_field('machine_shop_statement'); ?></h2>
+			</div> <!-- row -->
+		</div> <!-- container -->
+		
+		<div class="row grey-row">
+			<div class="container full-width-container">
 				<div class="col-sm-8 center">
 				<h4 class="section-header text-uppercase">Tech Specs</h4>
-				<?php the_field('techical_specifications'); ?>
+				<?php the_field('technical_specifications'); ?>
 				</div> <!-- col-sm-8 -->
 				<div class="col-sm-4 center">
 				<h4 class="section-header text-uppercase">Dimensions & Sizes</h4>
-				<?php the_field('dimensions'); ?>
+				<?php the_field('dimension_size'); ?>
 				</div> <!-- col-sm-4 -->
+				<div class="col-sm-8 center">
+				<h4 class="section-header text-uppercase">Packaging Contents</h4>
+				<?php the_field('packaging_contents'); ?>
+				</div> <!-- col-sm-8 -->
 			</div> <!-- row -->
 		</div> <!-- container -->
-		
-		<div class="container">
-			<div class="row"  id="press" style="background: white; padding: 6% 0 12% 0;">
-				<div class="col-sm-12 center">
-				<h4 class="section-header text-uppercase">How It Works</h4>
-				<?php the_field('how_it_works'); ?>
-				</div> <!-- col-sm-12 -->
-			</div> <!-- row -->
-		</div> <!-- container -->
-		
-		<div class="container">
-			<div class="row"  id="press" style="background: white; padding: 6% 0 12% 0;">
-				<div class="col-sm-12 center">
-				<h4 class="section-header text-uppercase">How It's Built</h4>
-				<?php the_field('how_its_built'); ?>
-				</div> <!-- col-sm-12 -->
-			</div> <!-- row -->
-		</div> <!-- container -->
-		
-		<div class="container">
-			<div class="row"  id="press" style="background: white; padding: 6% 0 12% 0;">
-				<div class="col-sm-12 center">
-				<h4 class="section-header text-uppercase">Setup</h4>
-				<?php the_field('setup'); ?>
-				</div> <!-- col-sm-12 -->
-			</div> <!-- row -->
-		</div> <!-- container -->
-		
-		<div class="row"  id="press" style="background: #18E09A; padding: 6% 0 12% 0;">
-			<div class="container">
-					<div class="section-separator"><h4 class="section-header text-uppercase">Methods of Testing</h4></div>
-					<?php the_field('methods_of_testing'); ?>
-			</div> <!-- container -->
-		</div><!-- row -->
 		
 		<?php endwhile; ?>
-
-		<div class="row"  id="press" style="background: #fff; padding: 6% 0 12% 0;">
-			<div class="container">
-			<div class="section-separator"><h4 class="section-header text-uppercase">As featured on</h4></div>
-				<div class="col-sm-12 center">
-			
-					<?php
-								//special settings to speed up the querying of a single post
-								$logoQuery = new WP_Query(array(
-								    'name' => 'logos',
-								    'posts_per_page' => 1,
-								    'no_found_rows' => true, 
-								    'update_post_term_cache' => false,
-								    'update_post_meta_cache' => false,
-								));
-								
-								?>		   
-							 <?php while($logoQuery->have_posts()): $logoQuery->the_post();?>
-							 
-								 <div class="col-sm-10 col-sm-offset-1" style="text-align:center;">
-								 	 <?php the_content() ?>
-								 </div>
-					             
-									<?php wp_reset_postdata(); ?>
-								<?php endwhile;?>
-			
-				</div> <!-- col-sm-12 -->
-			</div> <!-- container -->
-		</div><!-- row -->
 
 <?php get_footer(); ?>
