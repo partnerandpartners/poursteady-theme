@@ -6,22 +6,7 @@
 		
 		<div class="row grey-row" style="margin-top:54px;">
 			<div class="container-fluid">
-				<div class="col-lg-4 col-sm-offset-4">
-					<div class="buy-section">
-						<h2><?php the_title(); ?></h2>
-						<h4 class="subtitle"><?php the_field('subtitle'); ?></h4>
-						    <?php the_content(); ?>
-						<!-- <h1 class="price"><?php the_field('price'); ?></h1> -->
-						    <?php the_field('include'); ?><br><br>
-						<a href="<?php the_field('buy_link'); ?>" id="play" target="_blank"><button type="button" class="btn btn-primary btn-lg">Order Now</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="row no-padding-row margin-top">
-			<div class="container-fluid">
-					<div id='carousel-custom' class='carousel slide carousel-fade col-sm-6 col-sm-offset-3' data-ride='carousel' data-interval='false'>
+				<div id='carousel-custom' class='carousel slide carousel-fade col-lg-6' data-ride='carousel' data-interval='false'>
 					    <div class='carousel-outer'>
 					        <!-- Wrapper for slides -->
 					        <div class='carousel-inner'>
@@ -49,16 +34,26 @@
 					    <!-- Indicators -->
 					    <div class="carousel-thumbs">
 							<ol class='carousel-indicators'>
-								        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://placehold.it/100x50&text=slide1' alt='' /></li>
-								        <li data-target='#carousel-custom' data-slide-to='1'><img src='http://placehold.it/100x50&text=slide2' alt='' /></li>
-								        <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
-								        <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
-								        <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
+								<li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://placehold.it/100x50&text=slide1' alt='' /></li>
+								<li data-target='#carousel-custom' data-slide-to='1'><img src='http://placehold.it/100x50&text=slide2' alt='' /></li>
+								<li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
+								<li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
+								<li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
 								       
 							</ol>
 						</div>
 				</div>
-			</div>
+				<div class="col-lg-4 col-lg-offset-1">
+					<div class="buy-section">
+						<h2><?php the_title(); ?></h2>
+						<h4 class="subtitle"><?php the_field('subtitle'); ?></h4>
+						    <?php the_content(); ?>
+						<!-- <h1 class="price"><?php the_field('price'); ?></h1> -->
+						    <?php the_field('include'); ?><br><br>
+						<a href="<?php the_field('buy_link'); ?>" id="buy" target="_blank"><button type="button" class="btn btn-primary btn-lg">Order Now</button></a>
+					</div>
+				</div>
+			</div>			
 		</div>
 		
 		<div class="row">

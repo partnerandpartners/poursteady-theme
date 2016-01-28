@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Poursteady Sans';
+  src: url('Pourstaidy.eot');
+  src: url('Pourstaidy.eot?#iefix') format('embedded-opentype'),
+     url('Pourstaidy.woff') format('woff'),
+     url('Pourstaidy.svg#Pourstaidy') format('svg');
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+}

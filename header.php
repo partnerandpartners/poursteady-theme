@@ -27,9 +27,9 @@
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/fonts/1409-ASUUQS.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/fonts/ps.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
 	<!-- <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/ps-styles.min.css"> -->
-	<link rel="stylesheet" href="//f.fontdeck.com/s/css/ztizLcpXY96pMPqC/s/lM7UN2Ro/poursteady.com/44235.css" type="text/css" />
 	
 	
 	<!--
