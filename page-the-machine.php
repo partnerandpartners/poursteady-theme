@@ -4,6 +4,7 @@
 
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		
+
 		<div class="row no-padding-row" style="margin-top:74px;">
 			<div class="container-fluid full-width-container">
 					<div id='carousel-custom' class='carousel slide carousel-fade col-lg-7 no-padding-left' data-ride='carousel' data-interval='false'>
@@ -22,6 +23,7 @@
 					    <!-- Indicators -->
 					    <div class="carousel-thumbs">
 							<ol class='carousel-indicators'>
+
 								        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://localhost/poursteady/wp-content/uploads/machine_thumb1.jpg' alt='' /></li>
 								        <li data-target='#carousel-custom' data-slide-to='1'><img src='http://localhost/poursteady/wp-content/uploads/machine_thumb2.jpg' alt='' /></li>								       
 							</ol>
