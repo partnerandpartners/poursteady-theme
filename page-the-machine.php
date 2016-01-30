@@ -4,59 +4,55 @@
 
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		
-		<div class="row grey-row" style="margin-top:54px;">
-			<div class="container-fluid">
-				<div id='carousel-custom' class='carousel slide carousel-fade col-lg-6' data-ride='carousel' data-interval='false'>
+
+		<div class="row no-padding-row" style="margin-top:74px;">
+			<div class="container-fluid full-width-container">
+					<div id='carousel-custom' class='carousel slide carousel-fade col-lg-7 no-padding-left' data-ride='carousel' data-interval='false'>
 					    <div class='carousel-outer'>
 					        <!-- Wrapper for slides -->
 					        <div class='carousel-inner'>
 					            <div class='carousel-item active'>
-					                <img src='http://localhost/poursteady/wp-content/uploads/machine_home.jpg' class="img-fluid" alt='' />
+					                <img src='http://localhost/poursteady/wp-content/uploads/machine_image1.jpg' class="img-fluid" alt='' />
 					            </div>
 					            <div class='carousel-item'>
-					                <img src='http://placehold.it/400x200&text=slide2' class="img-fluid" alt='' />
+					                <img src='http://localhost/poursteady/wp-content/uploads/machine_image2.jpg' class="img-fluid" alt='' />
 					            </div>
-					            <div class='carousel-item'>
-					                <img src='http://placehold.it/400x200&text=slide3' class="img-fluid" alt='' />
-					            </div>
-					            <div class='carousel-item'>
-					                <img src='http://placehold.it/400x200&text=slide3' class="img-fluid" alt='' />
-					            </div>
-					            <div class='carousel-item'>
-					                <img src='http://placehold.it/400x200&text=slide3' class="img-fluid" alt='' />
-					            </div>
-					          
-					         
-					           
 					        </div>
 					    </div>
 					    
 					    <!-- Indicators -->
 					    <div class="carousel-thumbs">
 							<ol class='carousel-indicators'>
-								<li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://placehold.it/100x50&text=slide1' alt='' /></li>
-								<li data-target='#carousel-custom' data-slide-to='1'><img src='http://placehold.it/100x50&text=slide2' alt='' /></li>
-								<li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
-								<li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
-								<li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
-								       
+
+								        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://localhost/poursteady/wp-content/uploads/machine_thumb1.jpg' alt='' /></li>
+								        <li data-target='#carousel-custom' data-slide-to='1'><img src='http://localhost/poursteady/wp-content/uploads/machine_thumb2.jpg' alt='' /></li>								       
 							</ol>
 						</div>
 				</div>
-				<div class="col-lg-4 col-lg-offset-1">
+				
+				<div class="col-lg-5 machine-info">
 					<div class="buy-section">
 						<h2><?php the_title(); ?></h2>
 						<h4 class="subtitle"><?php the_field('subtitle'); ?></h4>
 						    <?php the_content(); ?>
 						<!-- <h1 class="price"><?php the_field('price'); ?></h1> -->
 						    <?php the_field('include'); ?><br><br>
-						<a href="<?php the_field('buy_link'); ?>" id="buy" target="_blank"><button type="button" class="btn btn-primary btn-lg">Order Now</button></a>
+						<a href="<?php the_field('buy_link'); ?>" id="play" target="_blank"><button type="button" class="btn btn-primary btn-lg">Order Now</button></a>
 					</div>
 				</div>
-			</div>			
+			</div>
 		</div>
 		
-		<div class="row">
+		<div class="row grey-row" style="margin-top:54px;">
+			<div class="container-fluid">
+				<div class="col-sm-6 col-sm-offset-3">
+			    	<h1 class="text-center"><?php the_field('large_statement'); ?></h1>
+			    	<p class="text-center"><?php the_field('lead_in_paragraph'); ?></p>
+				</div>
+			</div>
+		</div>
+				
+		<div class="row no-padding-row">
 		<div class="container-fluid full-width-container">
 				<?php 
 					$image = get_field('coffee_shop_image');
@@ -91,15 +87,6 @@
 					    </div>
 					    <?php endif; ?>
 				<?php endif; ?>
-			</div> <!-- container -->
-		</div> <!-- row -->
-		
-		<div class="row">
-			<div class="container-fluid">
-				<div class="col-sm-6 col-sm-offset-3">
-			    	<h1 class="text-center"><?php the_field('large_statement'); ?></h1>
-			    	<p class="text-center"><?php the_field('lead_in_paragraph'); ?></p>
-				</div>
 			</div> <!-- container -->
 		</div> <!-- row -->
 		
