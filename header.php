@@ -64,7 +64,7 @@
 </head>
 <body <?php body_class(); ?>>
 
-<nav class="navbar navbar-fixed-top navbar-light bg-faded">
+<nav class="navbar navbar-fixed-top navbar-light">
   <a class="navbar-brand" href="/poursteady">Poursteady</a>
   <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     &#9776;
@@ -72,16 +72,16 @@
   <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
 	  <ul class="nav navbar-nav" style="float: right;">
 	    <li class="nav-item">
-	      <a class="nav-link" href="the-machine">The Machine</a>
-	    </li>
-	    <li class="nav-item">
-	      <a class="nav-link" href="about">About</a>
+	      <a class="nav-link" href="the-machine">Machine</a>
 	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link" href="support">Support</a>
 	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link" href="news">News</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="about">About</a>
 	    </li>
 	  </ul>
   </div>
